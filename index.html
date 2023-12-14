@@ -35,15 +35,19 @@
                               </div>
                               <div class="list-contact">
                                   <div class="contact-all d-flex" 
-                                  v-for="(contact, index) in contacts"
+                                  v-for="(contact, index) in contacts" key="index"
                                   :class="currentContact === index ? 'active' : ''"
                                   @click="changeContact(index)"
                                   >
                                   <img :src="contact.avatar" alt="">
-                                  <h5 class="m-3">
-                                    {{ contact.name }}
-                                  </h5>
-      
+                                  <div class="text">
+                                      <h5 class="m-3">
+                                        {{ contact.name }}
+                                        <br>
+                                        <span>ciao ...</span>
+                                      </h5>
+                                     
+                                  </div>
                                   </div>
                               </div>
                         </div>
@@ -55,11 +59,29 @@
                                         {{ contacts[currentContact].name }}
                                       </h5>
                                 </div>
-                                <div class="chat d-flex">
+                                <div class="icon-profile">
                                     <i class="fa-solid fa-magnifying-glass fa-lg mt-4 mx-2"></i>
                                     <i class="fa-solid fa-paperclip fa-lg mt-4 mx-2"></i>
                                     <i class="fa-solid fa-ellipsis-vertical fa-lg mt-4 mx-2"></i>
-                                 </div>
+                                </div>
+                            </div>
+                            <div class="chat">
+                                <div v-for="message in contacts[currentContact].messages" :key="message.date" class="message" :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }">
+                                    <p class="message-text">{{ message.message }}</p>
+                                    <p class="message-date">{{ message.date }}</p>
+                                </div>
+                            </div>
+                            <div class="input-messages d-flex">
+                                <div class="emoticon">
+                                    <i class="fa-regular fa-face-smile fa-lg mx-4"></i>
+                                </div>
+                                <div class="input-message">
+                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                </div>
+                                <div class="mic">
+                                    <i class="fa-solid fa-microphone fa-lg mx-4"></i>
+                                </div>
+
                             </div>
                         </div>
                 </div>
