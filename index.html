@@ -34,21 +34,32 @@
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="cerca" aria-describedby="addon-wrapping">
                               </div>
                               <div class="list-contact">
-                                  <div class="contact-all" 
+                                  <div class="contact-all d-flex" 
                                   v-for="(contact, index) in contacts"
                                   :class="currentContact === index ? 'active' : ''"
+                                  @click="changeContact(index)"
                                   >
-                                  <img :src="`${contact.avatar}`" alt="">
+                                  <img :src="contact.avatar" alt="">
+                                  <h5 class="m-3">
+                                    {{ contact.name }}
+                                  </h5>
       
                                   </div>
                               </div>
                         </div>
                         <div class="content right">
-                            <div class="profile-message">
-
-                            </div>
-                            <div class="chat">
-
+                            <div class="profile-message d-flex justify-content-between">
+                                <div class="image-message d-flex align-itemes-center ">
+                                    <img :src="contacts[currentContact].avatar" alt="">
+                                    <h5 class="m-3">
+                                        {{ contacts[currentContact].name }}
+                                      </h5>
+                                </div>
+                                <div class="chat d-flex">
+                                    <i class="fa-solid fa-magnifying-glass fa-lg mt-4 mx-2"></i>
+                                    <i class="fa-solid fa-paperclip fa-lg mt-4 mx-2"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical fa-lg mt-4 mx-2"></i>
+                                 </div>
                             </div>
                         </div>
                 </div>

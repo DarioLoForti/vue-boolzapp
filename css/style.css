@@ -53,16 +53,23 @@ margin:10px
     height: 600px;
 }
 .contact-all img{
-    width: 100%;
+    border-radius: 50%;
     height: 100%;
     object-fit: cover;
 }
 
 .contact-all{
-    height: calc(600px / 8);
+    height: calc(600px / 9);
     opacity: 0.5;
+    background-color: white;
 }
 .contact-all.active {
     border: 2px solid rgb(32, 32, 32);
     opacity: 1;
+}
+
+.profile-message img{
+    height: 70%;
+    border-radius: 50%;
+    margin: 10px
 }
