@@ -35,7 +35,7 @@
                               </div>
                               <div class="list-contact">
                                   <div class="contact-all d-flex" 
-                                  v-for="(contact, index) in contacts" key="index"
+                                  v-for="(contact, index) in contacts" :key="index"
                                   :class="currentContact === index ? 'active' : ''"
                                   @click="changeContact(index)"
                                   >

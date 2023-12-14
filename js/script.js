@@ -176,12 +176,24 @@ createApp({
         },
 
         addMessage(){
-            let obj = {
+            let obj_user = {
+                date: '10/01/2020 15:50:00',
                 message: this.inputMessage,
                 status: "sent"
-            }
+            };
 
-            this.contacts[this.currentContact].messages.push(obj);
+            this.contacts[this.currentContact].messages.push(obj_user);
+
+            setTimeout(() => {
+                let obj_bot = {
+                    date: '10/01/2020 15:50:00',
+                    message: "ok",
+                    status: "received"
+                };
+
+                this.contacts[this.currentContact].messages.push(obj_bot);
+            },1000);
+
             this.inputMessage = "";
         }
     },
