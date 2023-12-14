@@ -10,6 +10,50 @@
 </head>
 <body>
     <div id="app">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12 d-flex ">
+                        <div class="content left">
+                            <div class="profile d-flex justify-content-between">
+                                <div class="image d-flex align-itemes-center justify-content-between">
+                                    <img src="./img/avatar_io.jpg" alt="image account">
+                                    <h5 class="m-3">Dario</h5>
+                                </div>
+                                <div class="icons d-flex">
+                                    <i class="fa-solid fa-circle-notch fa-lg mt-4 mx-2"></i>
+                                    <i class="fa-solid fa-message fa-lg mt-4 mx-2"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical fa-lg mt-4 mx-2"></i>
+                                </div>
+                            </div>
+                            <div class="notifiche d-flex mt-3">
+                                <i class="fa-solid fa-bell-slash fa-2xl m-3"></i>
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                            </div>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="cerca" aria-describedby="addon-wrapping">
+                              </div>
+                              <div class="list-contact">
+                                  <div class="contact-all" 
+                                  v-for="(contact, index) in contacts"
+                                  :class="currentContact === index ? 'active' : ''"
+                                  >
+                                  <img :src="`${contact.avatar}`" alt="">
+      
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="content right">
+                            <div class="profile-message">
+
+                            </div>
+                            <div class="chat">
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
 
 
 
