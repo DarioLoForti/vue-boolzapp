@@ -177,8 +177,10 @@ createApp({
         },
 
         addMessage(){
+            const currentDate = luxon.DateTime.local().toFormat('dd/MM/yyyy HH:mm:ss');
+
             let obj_user = {
-                date: '10/01/2020 15:50:00',
+                date: currentDate,
                 message: this.inputMessage,
                 status: "sent"
             };
@@ -187,7 +189,7 @@ createApp({
 
             setTimeout(() => {
                 let obj_bot = {
-                    date: '10/01/2020 15:50:00',
+                    date: currentDate,
                     message: "ok",
                     status: "received"
                 };
@@ -202,8 +204,6 @@ createApp({
             this.contacts.forEach((element) => {
 
                 if(element.name.toLowerCase().includes(this.search.toLowerCase())){
-                    console.log(element.name);
-                    console.log(element.visible);
                     element.visible = true;
                 }
                 else{
