@@ -4,12 +4,13 @@ createApp({
     data(){
         return{
             currentContact: 0,
+            search:"",
+            inputMessage:"",
             contacts: [
                 {
                 name: 'Michele',
                 avatar: './img/avatar_1.jpg',
                 visible: true,
-                inputMessage:"",
                 messages: [
                     {
                     date: '10/01/2020 15:30:55',
@@ -195,6 +196,19 @@ createApp({
             },1000);
 
             this.inputMessage = "";
+        },
+
+        searchContact(){
+            this.contacts.forEach((element) => {
+                if(element.name.toLowerCase().includes(this.search.toLowerCase())){
+                    console.log(element.name);
+                    element.visible = true;
+                }
+                else{
+                    element.visible = false;
+                }
+            });
+
         }
     },
 }).mount("#app")
