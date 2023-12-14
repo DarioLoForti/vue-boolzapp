@@ -200,8 +200,10 @@ createApp({
 
         searchContact(){
             this.contacts.forEach((element) => {
+
                 if(element.name.toLowerCase().includes(this.search.toLowerCase())){
                     console.log(element.name);
+                    console.log(element.visible);
                     element.visible = true;
                 }
                 else{

@@ -84,6 +84,9 @@ margin:10px;
 .list-contact{
     height: 700px;
 }
+.contact-all{
+    display: flex;
+}
 .contact-all img{
     border-radius: 50%;
     margin: 10px;
