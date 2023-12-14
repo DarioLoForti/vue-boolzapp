@@ -9,6 +9,7 @@ createApp({
                 name: 'Michele',
                 avatar: './img/avatar_1.jpg',
                 visible: true,
+                inputMessage:"",
                 messages: [
                     {
                     date: '10/01/2020 15:30:55',
@@ -172,6 +173,16 @@ createApp({
     methods: {
         changeContact(index){
             this.currentContact = index;
-        }  
+        },
+
+        addMessage(){
+            let obj = {
+                message: this.inputMessage,
+                status: "sent"
+            }
+
+            this.contacts[this.currentContact].messages.push(obj);
+            this.inputMessage = "";
+        }
     },
 }).mount("#app")
