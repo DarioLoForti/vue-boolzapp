@@ -45,6 +45,7 @@ margin:10px;
 .cursor{
     cursor: pointer;
 }
+
 .notifiche{
     background-color: #8ED9FD;
     height: 75px;
@@ -86,16 +87,30 @@ margin:10px;
     margin: 0;
 }
 
+.messages-date {
+    font-size: 12px;
+    color: gray;
+    margin-left: 160px;
+    margin-top: 5px;
+}
+
 .message-date {
     font-size: 12px;
     color: gray;
-    margin-top: 10px;
+    margin-top: 50px;
+    margin-right: 10px;
 }
 .list-contact{
     height: 700px;
 }
 .contact-all{
     display: flex;
+    
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+    width: 100%
 }
 .contact-all img{
     border-radius: 50%;

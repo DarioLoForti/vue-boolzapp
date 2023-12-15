@@ -34,22 +34,22 @@
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="searchContact" aria-label="cerca" aria-describedby="addon-wrapping">
                               </div>
                               <div class="list-contact">
-                                  <div class="contact-all" 
-                                  v-for="(contact, index) in contacts" :key="index"
-                                  :class="currentContact === index ? 'active' : ''"
-                                  @click="changeContact(index)"
-                                  v-show="contact.visible"
-                                  >
-                                      <img :src="contact.avatar" alt="">
-                                      <div class="text">
-                                          <h5 class="m-3">
-                                            {{ contact.name }}
-                                            <br>
-                                            <span> {{contact.messages[contact.messages.length - 1].message}} </span>
-                                          </h5>
-                                      </div>
-                                
-                                  </div>
+                                    <div class="contact-all" 
+                                        v-for="(contact, index) in contacts" 
+                                        :key="index"
+                                        :class="currentContact === index ? 'active' : ''"
+                                        @click="changeContact(index)"
+                                        v-show="contact.visible">
+                                        <img :src="contact.avatar" alt="">
+                                        <div class="text">
+                                                <h5 class="my-3">
+                                                    {{ contact.name }}
+                                                    <br>
+                                                    <span> {{contact.messages[contact.messages.length - 1].message}} </span>
+                                                </h5>
+                                                <p class="message-date">{{ contact.messages[contact.messages.length - 1].date }}</p>
+                                        </div>
+                                    </div>
                               </div>
                         </div>
                         <div class="content right">
@@ -69,7 +69,8 @@
                             <div class="chat">
                                 <div v-for="(message, index) in contacts[currentContact].messages" :key="index" class="message" :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received','selected': index === selectedMessageIndex }" @click="selectMessage(index)">
                                     <p class="message-text">{{ message.message }}</p>
-                                    <p class="message-date">{{ message.date }}</p>
+                                   
+                                    <p class="messages-date">{{ message.date }}</p>
                                     <div v-if="index === selectedMessageIndex" class="dropdown">
                                         <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         </button>
