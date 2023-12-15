@@ -5,6 +5,7 @@ createApp({
         return{
             currentContact: 0,
             search:"",
+            selectedMessageIndex: null,
             inputMessage:"",
             contacts: [
                 {
@@ -211,6 +212,19 @@ createApp({
                 }
             });
 
-        }
+        },
+
+        selectMessage(index) {
+            
+            this.selectedMessageIndex = index;
+        },
+    
+        deleteMessage(index) {
+            console.log( this.selectedMessageIndex)
+            this.contacts[this.currentContact].messages.splice(index, 1);
+            this.selectedMessageIndex = null; 
+        },
+
+        
     },
 }).mount("#app")

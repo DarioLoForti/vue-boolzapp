@@ -24,6 +24,11 @@ width: 500px;
  width: 800px;
 
 }
+.btn{
+    position: absolute;
+    bottom: 50px;
+    right: -10px;
+}
 
 .profile{
     width: 100%;
@@ -37,6 +42,9 @@ border-radius: 50%;
 margin:10px;
 }
 
+.cursor{
+    cursor: pointer;
+}
 .notifiche{
     background-color: #8ED9FD;
     height: 75px;
@@ -65,11 +73,13 @@ margin:10px;
 .sent {
     align-self: flex-end;
     background-color: #b2d8b2;
+    position: relative;
 }
 
 .received {
     align-self: flex-start;
     background-color: white;
+    position: relative;
 }
 
 .message-text {
