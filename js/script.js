@@ -179,7 +179,6 @@ createApp({
 
         addMessage(){
             const currentDate = luxon.DateTime.local().toFormat('dd/MM/yyyy HH:mm:ss');
-
             let obj_user = {
                 date: currentDate,
                 message: this.inputMessage,
@@ -223,7 +222,7 @@ createApp({
 
             this.contacts[this.currentContact].messages.splice(index, 1);
             
-            this.selectedMessageIndex.length = null; 
+            this.selectedMessageIndex = null; 
         },
 
         

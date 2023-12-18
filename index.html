@@ -45,9 +45,15 @@
                                                 <h5 class="my-3">
                                                     {{ contact.name }}
                                                     <br>
-                                                    <span> {{contact.messages[contact.messages.length - 1].message.slice(0, 20)}} </span>
+                                                    <span v-if="contact.messages && contact.messages.length > 0">
+                                                        {{ contact.messages[contact.messages.length - 1].message.slice(0, 20) }}
+                                                    </span>
+                                                    <span v-else></span>
+                                                    
                                                 </h5>
-                                                <p class="message-date">{{ contact.messages[contact.messages.length - 1].date }}</p>
+                                                <p class="message-date" v-if="contact.messages && contact.messages.length > 0">
+                                                    {{ contact.messages[contact.messages.length - 1].date }}
+                                                </p>
                                         </div>
                                     </div>
                               </div>
