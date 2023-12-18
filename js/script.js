@@ -223,7 +223,7 @@ createApp({
 
             this.contacts[this.currentContact].messages.splice(index, 1);
             
-            this.selectedMessageIndex = null; 
+            this.selectedMessageIndex.length = null; 
         },
 
         
